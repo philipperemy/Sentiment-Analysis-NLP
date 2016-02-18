@@ -1,8 +1,9 @@
-# Simple sentiment analysis examples
-Sentiment analysis applied to different datasets such as IMDB.
+# Simple sentiment analysis examples 
+Sentiment analysis applied to different datasets such as IMDB. The perceptron implementation uses [Keras](http://keras.io/), a minimalist, highly modular neural networks library, written in Python and capable of running on top of either TensorFlow or Theano.
 
 ## Documentation
-Please refer to Wikipedia for more information about [Sentiment Analysis](https://en.wikipedia.org/wiki/Sentiment_analysis)
+What is sentiment analysis? [Sentiment Analysis](https://en.wikipedia.org/wiki/Sentiment_analysis)
+[Getting Started in 30 seconds](http://keras.io/#getting-started-30-seconds-to-keras) with Keras.
 
 ## How to
 
