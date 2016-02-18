@@ -1,0 +1,15 @@
+### Python ###
+# Byte-compiled / optimized / DLL files
+
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# TXT files
+*.txt
+
+# TMP files
+.idea/
+aclImdb/

@@ -1,7 +1,6 @@
 import utils
 import numpy as np
 import os
-from perceptron.perceptron_model import get_model
 from random import shuffle
 
 from keras.models import Sequential
@@ -10,16 +9,16 @@ from keras.optimizers import SGD
 
 
 def get_model(X, y):
-    model = Sequential()
-    model.add(Dense(1, input_dim=X.shape[1]))
-    model.add(Activation('sigmoid'))
+    mod = Sequential()
+    mod.add(Dense(1, input_dim=X.shape[1]))
+    mod.add(Activation('sigmoid'))
     sgd = SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True)
-    model.compile(loss='mean_squared_error', optimizer=sgd)
-    model.fit(X, y, nb_epoch=200, batch_size=1)
-    return model
+    mod.compile(loss='mean_squared_error', optimizer=sgd)
+    mod.fit(X, y, nb_epoch=200, batch_size=1)
+    return mod
 
 
-def process_words(cur_file, input_nn):
+def process_words(cur_file, input_nn, all_words):
     words = utils.read_words_from_file(cur_file)
     positive_count = 0
     negative_count = 0
@@ -40,7 +39,7 @@ def load_inputs(folder, label, count, input_nn):
     file_count = 0
     for cur_file in os.listdir(folder):
         if cur_file.endswith(".txt"):
-            process_words(folder + "/" + cur_file, input_nn)
+            process_words(folder + "/" + cur_file, input_nn, keywords_vocab)
             targets.append(label)
             file_count += 1
             if file_count % (count/10) == 0:
@@ -51,20 +50,22 @@ def load_inputs(folder, label, count, input_nn):
 
 if __name__ == '__main__':
 
+    print "script is running..."
+
     positive_words = utils.get_positive_words()
     negative_words = utils.get_negative_words()
 
-    all_words = positive_words + negative_words
+    keywords_vocab = positive_words + negative_words
 
-    print "=> loaded", len(positive_words), "positive words"
-    print "=> loaded", len(negative_words), "negative words"
+    print "=> loaded", len(positive_words), "positive words."
+    print "=> loaded", len(negative_words), "negative words."
 
     input_nn = []
     targets = []
 
     samples_per_category = 5000
-    load_inputs("neg", 0, samples_per_category, input_nn)
-    load_inputs("pos", 1, samples_per_category, input_nn)
+    load_inputs("aclImdb/train/neg", 0, samples_per_category, input_nn)
+    load_inputs("aclImdb/train/pos", 1, samples_per_category, input_nn)
 
     input_nn_shuffle = []
     targets_shuffle = []
@@ -92,4 +93,3 @@ if __name__ == '__main__':
 
     predict_valid = model.predict(input_nn_valid) > 0.5
     print "validation=", np.mean(np.array(predict_valid[:, 0], dtype=int) == targets_valid)
-
