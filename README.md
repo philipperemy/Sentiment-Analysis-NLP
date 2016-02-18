@@ -1,10 +1,10 @@
 # Sentiment-Analysis-NLP
 Simple sentiment analysis applied to different datasets such as IMDB.
 
-# Documentation
+## Documentation
 Please refer to Wikipedia for more information about [Sentiment Analysis](https://en.wikipedia.org/wiki/Sentiment_analysis)
 
-# How to
+## How to
 
 ```
 git clone https://github.com/philipperemy/Sentiment-Analysis-NLP.git
