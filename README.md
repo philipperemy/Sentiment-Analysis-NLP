@@ -11,6 +11,7 @@ git clone https://github.com/philipperemy/Sentiment-Analysis-NLP.git
 cd Sentiment-Analysis-NLP
 chmod +x init.sh
 ./init.sh
+python main_perceptron.py
 ```
 
 The script will download the [IMDB Sentiment Database](http://ai.stanford.edu/~amaas/data/sentiment/) from Stanford University and unzip it.
