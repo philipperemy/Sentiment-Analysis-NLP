@@ -1,5 +1,5 @@
-# Sentiment-Analysis-NLP
-Simple sentiment analysis applied to different datasets such as IMDB.
+# Simple sentiment analysis examples
+Sentiment analysis applied to different datasets such as IMDB.
 
 ## Documentation
 Please refer to Wikipedia for more information about [Sentiment Analysis](https://en.wikipedia.org/wiki/Sentiment_analysis)
