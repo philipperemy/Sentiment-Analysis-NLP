@@ -38,3 +38,11 @@ Epoch 1/200
 6666/6666 [==============================] - 22s - loss: 0.2177    
 [...]  
 ```
+
+## Results
+
+On 10k reviews with 2/3 training and 1/3 validation set (200 epochs). <br />
+```
+training= 0.803180318032
+validation= 0.732913669065
+```
