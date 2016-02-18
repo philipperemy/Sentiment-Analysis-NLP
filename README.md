@@ -47,3 +47,16 @@ This result is very experimental and can be drastically increased.
 training= 0.803180318032
 validation= 0.732913669065
 ```
+
+## Visualize the graph (tensorflow feature)
+Make sure the backend of Keras is tensorflow. You can check it easily by
+
+```
+cat ~/.keras/keras.json
+{"epsilon": 1e-07, "floatx": "float32", "backend": "tensorflow"}
+```
+
+Finally run the tensorboard command with specifying the log dir.
+```
+tensorboard --logdir=/Users/philipperemy/PycharmProjects/Sentiment-Analysis-NLP/deep_learning/runs/1455792487
+```
