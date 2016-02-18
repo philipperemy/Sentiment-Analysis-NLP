@@ -39,9 +39,10 @@ Epoch 1/200
 [...]  
 ```
 
-## Results
+## Results (accuracy)
 
 On 10k reviews with 2/3 training and 1/3 validation set (200 epochs). <br />
+This result is very experimental and can be drastically increased.
 ```
 training= 0.803180318032
 validation= 0.732913669065
