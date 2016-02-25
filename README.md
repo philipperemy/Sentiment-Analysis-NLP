@@ -38,3 +38,25 @@ Epoch 1/200
 6666/6666 [==============================] - 22s - loss: 0.2177    
 [...]  
 ```
+
+## Results (accuracy)
+
+On 10k reviews with 2/3 training and 1/3 validation set (200 epochs). <br />
+This result is very experimental and can be drastically increased.
+```
+training= 0.803180318032
+validation= 0.732913669065
+```
+
+## Visualize the graph (tensorflow feature)
+Make sure the backend of Keras is tensorflow. You can check it easily by
+
+```
+cat ~/.keras/keras.json
+{"epsilon": 1e-07, "floatx": "float32", "backend": "tensorflow"}
+```
+
+Finally run the tensorboard command with specifying the log dir.
+```
+tensorboard --logdir=/Users/philipperemy/PycharmProjects/Sentiment-Analysis-NLP/deep_learning/runs/1455792487
+```
